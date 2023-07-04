@@ -1,0 +1,7 @@
+rm hola mifuncion.o hola-funciones.o
+gcc -c mifuncion.c
+gcc -c hola-funciones.c
+gcc mifuncion.o hola-funciones.o -o hola
+./hola 
+Hola mundo!
+gcc hola-funciones.o -o hola  # ERROR!

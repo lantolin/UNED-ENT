@@ -1,0 +1,7 @@
+rm hola.jar Hola.class HolaMundo.class 
+javac Hola.java 
+javac HolaMundo.java 
+java HolaMundo 
+
+jar cvef HolaMundo hola.jar Hola.class HolaMundo.class
+java -jar hola.jar

@@ -1,0 +1,4 @@
+rm hola hola.o
+as hola.s -o hola.o
+ld hola.o -o hola
+./hola
