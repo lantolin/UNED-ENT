@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+
+actor Usuario as user
+actor "Usuario Trial" as trial
+actor "Usuario Normal" as normal
+actor "Usuario Premium" as prem
+actor Administrador as admin
+
+rectangle Sistema {
+(Chat Room) as chat
+(Ver Vídeos) as ver
+(Mantener Database) as ddbb
+(Crear Cuenta) as cc
+(Crear Cuenta Normal) as ccn
+(Crear Cuenta Premium) as ccp
+(Subir Vídeos) as subir
+(Like) as like
+}
+
+user --> chat
+user --> ver
+admin --> ddbb
+normal --> cc
+prem --> cc
+admin --> subir
+
+user <|-- trial
+user <|-- normal
+user <|-- prem
+cc <|-- ccn
+cc <|-- ccp
+
+like .> ver :<<include>>
+ddbb .> subir :<<include>>
+subir .> ver :<<include>>
+@enduml
+

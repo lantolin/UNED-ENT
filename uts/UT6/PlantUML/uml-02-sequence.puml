@@ -1,0 +1,18 @@
+@startuml
+actor Cliente as c
+participant "Punto De Venta" as pv
+participant Servidor as s
+
+c->pv : iniciar sesion
+pv->s : obtener películas
+s->pv : lista de peliculas
+pv -> c : numero de sesion
+c -> pv : elegir película
+pv->s : obtener asientos
+s->pv : lista de asientos
+pv -> c : mapa de la sala
+c -> pv : elegir asientos
+pv->s : reservar asientos
+s->pv : ok
+pv->c : confirmación de reserva
+@enduml

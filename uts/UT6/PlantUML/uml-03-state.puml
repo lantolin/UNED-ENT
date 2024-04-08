@@ -1,0 +1,19 @@
+@startuml
+
+state R: Running or Runnable
+state D: Uninterrumptible Sleep
+state S: Interrumpible Sleep
+state T: Stopped
+state Z: Zombie
+
+
+[*]->R : Creación de Proceso
+R-->S : wait for event 
+S-->R : event 
+R-->D : IO wait
+D-->R : IO ready
+R-->T : SIGSTOP
+T-->R : SIGCONT
+R-->Z : exit
+Z-->[*] : parent reads status
+@enduml

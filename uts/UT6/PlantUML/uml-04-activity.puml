@@ -1,0 +1,14 @@
+@startuml
+start
+if (llueve) then (yes)
+  :Cojo un paraguas;
+elseif (nieva) then (yes)
+  :Me quedo mirando por la ventana;
+  stop
+elseif (hace mucho viento) then (yes)
+  :Cojo una bufanda;
+else (no)
+endif
+:Salgo de casa;
+stop
+@enduml
